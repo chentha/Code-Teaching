@@ -1,32 +1,49 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <header>
     <div class="header-left">
         <a href="#" class="menu-btn">
             <div class="w3schools-logo">
-                <img src="../../assets/image/logo.png" />
+                <img src="../../assets/image/logo.jpg" />
             </div>
         </a>
-        <div href="#Tutorial" class="menu-btn " id="Tutorial-btn">
+        <div href="#Tutorial" class="menu-btn" id="Tutorial-btn">
             Tutorials
             <i class="fa-solid fa-caret-down"></i>
         </div>
-        <div href="#references" class="menu-btn " id="references-btn">
+        <div href="#references" class="menu-btn" id="references-btn">
             References
-            <i class="fa-solid fa-caret-down "></i>
+            <i class="fa-solid fa-caret-down"></i>
         </div>
-        <div href="#exercises" class="menu-btn " id="exercises-btn">
+        <div href="#exercises" class="menu-btn" id="exercises-btn">
             Exercises
-            <i class="fa-solid fa-caret-down" class="menu-btn"></i>
+            <i class="fa-solid fa-caret-down"></i>
         </div>
         <a href="https://www.w3schools.com/videos/index.php" class="menu-btn" id="video-btn">
             Videos
         </a>
 
-        <!---mobile view menu-->
-        <div class="menu-btn" id="Menu-btn-Mobile">
-            Menu
-            <i class="fa-solid fa-caret-down" class="menu-btn"></i>
-        </div>
+        <!-- Mobile view menu -->
+        <!-- <div class="menu-container">
+            <div class="menu-btn" id="Menu-btn-Mobile" (click)="toggleMenu()">
+                Menu
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <nav id="mobile-menu-nav" [ngClass]="{'mobile-menu-nav-hidden': !isMenuOpen}">
+                <div *ngIf="isMenuOpen" class="mobile-menu-items">
+                    <a href="#Tutorial" class="menu-btn">Tutorials</a>
+                    <a href="#references" class="menu-btn">References</a>
+                    <a href="#exercises" class="menu-btn">Exercises</a>
+                    <a href="https://www.w3schools.com/videos/index.php" class="menu-btn">Videos</a>
+                </div>
+
+            </nav>
+        </div> -->
+
     </div>
+
     <div class="header-right">
         <div class="toggle_Search">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -37,6 +54,8 @@
         </div>
     </div>
 </header>
+
+
 
 <!--mobile menu bar-->
 <div class="mobile-menu-container" id="mobile-menu-nav">
@@ -52,7 +71,7 @@
                 id="Tutorial_menu_mobile">
                 <h1>Tutorials</h1>
                 <h2>html css</h2>
-                <a href="#">slfkjdlskjfsdlfj</a>
+
 
             </div>
         </div>
@@ -63,7 +82,7 @@
                 id="references_menu_mobile">
                 <h1>Tutorials</h1>
                 <h2>html css</h2>
-                <a href="#">slfkjdlskjfsdlfj</a>
+
 
             </div>
         </div>
@@ -74,7 +93,7 @@
                 id="exercises_menu_mobile">
                 <h1>Tutorials</h1>
                 <h2>html css</h2>
-                <a href="#">slfkjdlskjfsdlfj</a>
+
 
             </div>
         </div>
@@ -94,10 +113,13 @@
 
 
 <!-------------------------------------------------------------------------------------->
-<section class="section_Heading">
+<section class="section_Heading mb-4">
     <div class="section_container">
         <h1>Learn to Code</h1>
-        <p>With the world's largest web developer site.</p>
+        <p>
+            Learn Programming Online Course with exercises, lessons,
+            Best Education & Online Courses Site Template
+        </p>
         <div class="section_Heading_search">
             <input type="text" placeholder="Search our tutorial, e.g. HTML" />
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -113,8 +135,64 @@
 
 
 
+
 <!------------------------------------------------------------------->
 <section class="courses_card_container">
+
+    <div class="container mb-3">
+        <h1 class="text-center mt-3 mb-4">Front-End Developer</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="p-2">
+                    <p class="text_title">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit doloribus repellendus mollitia
+                        vero
+                        voluptates officia laudantium nihil cupiditate, ullam error dolor atque nam necessitatibus
+                        temporibus
+                        veniam quod debitis optio iure? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+                        doloribus
+                        repellendus mollitia vero voluptates officia laudantium nihil cupiditate, ullam error dolor
+                        atque
+                        nam
+                        necessitatibus temporibus veniam quod debitis optio iure?
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <img class=" mx-auto d-block image_avatar" src="../../assets/image/avatar1.jpg" alt="Avatar">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-3">
+        <h1 class="text-center mt-3 mb-4">Back-End Developer</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <img class="d-block image_avatar" src="../../assets/image/avatar2.jpg" alt="Avatar">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-2">
+                    <p class="text_title">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit doloribus repellendus mollitia
+                        vero
+                        voluptates officia laudantium nihil cupiditate, ullam error dolor atque nam necessitatibus
+                        temporibus
+                        veniam quod debitis optio iure? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+                        doloribus
+                        repellendus mollitia vero voluptates officia laudantium nihil cupiditate, ullam error dolor
+                        atque
+                        nam
+                        necessitatibus temporibus veniam quod debitis optio iure?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="courses_bigCard">
         <div class="bg-pink">
             <h2>PHP</h2>
@@ -167,51 +245,6 @@
             <h2>C#</h2>
         </a>
     </div>
-    <div class="courses_smallCard">
-        <a class="bg-white" href="https://www.w3schools.com/r/default.asp">R</a>
-        <a class="bg-lightGreen" href="https://www.w3schools.com/kotlin/index.php">Kotlin</a>
-        <a class="bg-blue" href="https://www.w3schools.com/nodejs/default.asp">Node.js</a>
-        <a class="bg-pink" href="https://www.w3schools.com/react/default.asp">React</a>
-        <a class="bg-yellow" href="https://www.w3schools.com/js/js_json.asp">JSON</a>
-
-
-        <a class="bg-white" href="https://www.w3schools.com/angular/default.asp">Angular</a>
-        <a class="bg-lightGreen" href="https://www.w3schools.com/mysql/default.asp">MySQL</a>
-        <a class="bg-blue" href="https://www.w3schools.com/xml/default.asp">XML</a>
-        <a class="bg-pink" href="https://www.w3schools.com/sass/default.php">Saas</a>
-        <a class="bg-yellow" href="https://www.w3schools.com/icons/default.asp">Icon</a>
-
-
-        <a class="bg-white" href="https://www.w3schools.com/css/css_rwd_intro.asp">RWD</a>
-        <a class="bg-lightGreen" href="https://www.w3schools.com/graphics/default.asp">Graphic</a>
-        <a class="bg-blue" href="https://www.w3schools.com/graphics/svg_intro.asp">SVG</a>
-        <a class="bg-pink" href="https://www.w3schools.com/graphics/canvas_intro.asp">Canvas</a>
-        <a class="bg-yellow" href="https://www.w3schools.com/nodejs/nodejs_raspberrypi.asp">Raspberry Pi</a>
-
-
-        <a class="bg-white" href="https://www.w3schools.com/cybersecurity/index.php">Cyber Security</a>
-        <a class="bg-lightGreen" href="https://www.w3schools.com/colors/default.asp">Colors</a>
-        <a class="bg-blue" href="https://www.w3schools.com/git/default.asp">Git</a>
-        <a class="bg-pink" href="https://www.w3schools.com/python/matplotlib_intro.asp">Matplotlib</a>
-
-
-        <a class="bg-yellow" href="https://www.w3schools.com/python/numpy/default.asp">Numpy</a>
-        <a class="bg-white" href="https://www.w3schools.com/python/pandas/default.asp">Pandas</a>
-        <a class="bg-lightGreen" href="https://www.w3schools.com/python/scipy/index.php">Scipy</a>
-        <a class="bg-blue" href="https://www.w3schools.com/asp/default.asp">ASP</a>
-        <a class="bg-pink" href="https://www.w3schools.com/accessibility/index.php">Accessibility</a>
-
-        <a class="bg-yellow" href="https://www.w3schools.com/appml/default.asp">AppML</a>
-        <a class="bg-white" href="https://www.w3schools.com/go/index.php">Go</a>
-        <a class="bg-lightGreen" href="https://www.w3schools.com/typescript/index.php">TypeScript</a>
-        <a class="bg-blue" href="https://www.w3schools.com/django/index.php">Django</a>
-        <a class="bg-pink" href="https://www.w3schools.com/mongodb/index.php">Mongodb</a>
-
-        <a class="bg-yellow" href="https://www.w3schools.com/statistics/index.php">Statistics</a>
-        <a class="bg-white" href="https://www.w3schools.com/datascience/default.asp">Data Science</a>
-        <a class="bg-lightGreen" href="https://www.w3schools.com/typingspeed/default.asp">Typing Speed</a>
-
-    </div>
 
     <div class="courses_middleCard courses-middleCard-padding">
         <a href="https://www.w3schools.com/excel/index.php" class="bg-blue">
@@ -240,7 +273,40 @@
     </div>
 
 
+    <div class="container mb-3">
+        <h1 class="text-center mt-3 mb-4">Contact</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <img class="d-block img-fluid image_avatar" src="../../assets/image/contact.jpg" alt="Avatar">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-2">
+                    <form action="">
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control input_text p-2" placeholder="Name">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="email" class="form-control input_text p-2" placeholder="Email">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control input_text p-2" placeholder="Subject">
+                        </div>
+                        <div class="form-group mb-3">
+                            <textarea class="form-control p-2" rows="4" placeholder="Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </section>
+
+
 
 
 <footer class="footer">

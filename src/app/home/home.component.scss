@@ -49,18 +49,18 @@ header {
     cursor: pointer;
 }
 
-.bg-white {
-    background-color: var(--bs-white);
+.bg-white1 {
+    background-color: #ffc0c7;
     color: var(--bs-black);
 }
 
 .bg-black {
-    background-color: var(--bs-black);
+    background-color: #fff4a3;
     color: var(--bs-white);
 }
 
-.bg-pink {
-    background-color: var(--bs-pink);
+.bg-pink1 {
+    background-color: #ffc0c7;
     color: var(--bs-black);
 }
 
@@ -74,8 +74,8 @@ header {
     color: var(--bs-white);
 }
 
-.bg-lightGreen {
-    background-color: var(--bs-green-light);
+.bg-lightGreen1 {
+    background-color: #ffc0c7;
     color: var(--bs-black);
 }
 
@@ -438,11 +438,59 @@ header {
     font-size: 22px;
 }
 
+
 .nested-navigation-container_content_Mobile h2 {
     margin: 7px 0;
     color: var(--bs-yellow);
     font-size: 23px;
 }
+
+
+
+
+
+.menu-container {
+    position: relative;
+}
+
+.menu-btn {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+
+}
+
+.menu-btn i {
+    margin-left: 5px;
+}
+
+.mobile-menu-nav-hidden {
+    display: none;
+}
+
+.mobile-menu-items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu-items a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.mobile-menu-items a:hover {
+    background-color: #555;
+}
+
 
 .nested-navigation-container_content_Mobile a {
     display: block;
@@ -457,6 +505,9 @@ header {
 .mobile_menuActive_tutorial {
     display: none;
 }
+
+
+
 
 /***********utitlity text class*****/
 .text-white {
@@ -481,7 +532,7 @@ svg {
 }
 
 .section_Heading {
-    background-image: url('https://teachmag.com/wp-content/uploads/2020/12/code_nowords.png');
+    background-image: url('../../assets/image/bg_main.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -501,13 +552,14 @@ svg {
     // color: rgb(0, 0, 0);
     color: white;
     margin: 0;
+    margin-bottom: 20px;
 }
 
 .section_Heading p {
-    color: #000;
-    font-size: 21px;
-    font-weight: 550;
+    color: white;
+    font-size: 16px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .section_Heading_search {
@@ -544,10 +596,10 @@ svg {
 
 .section_Heading a {
     display: block;
-    color: #000;
+    color: white;
     font-size: 22px;
-    font-weight: 550;
-    margin: 30px 0px;
+    font-weight: 500;
+    margin-top: 20px;
 }
 
 .section_Heading a:hover {
@@ -712,7 +764,6 @@ svg {
       courses_card_container
   ************************************************/
 .courses_card_container {
-    background-color: #282A35;
     padding: 50px 10px;
     position: relative;
     top: -5px;
@@ -1628,4 +1679,26 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+
+
+
+.box_skill{
+    display: flex;
+    align-items: center;
+}
+.text_title{
+    font-size: 20px;
+}
+.image_avatar{
+    width: 370px;
+}
+
+.custom-padding-left {
+    padding-left: 20px; 
+  }
+
+.input_text{
+    height: 40px;
 }

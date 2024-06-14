@@ -1,0 +1,17 @@
+<div class="container1">
+    <div class="login-page">
+        <div *ngIf="alert !== null" class="alert" [ngClass]="{'success': alert, 'error': !alert}">
+            {{ alert ? 'Registration successful' : 'User already exists. Please choose a different username.' }}
+        </div>
+        <div class="form">
+            <h2 class="mb-5">Sign Up</h2>
+            <form class="register-form" (submit)="register()">
+                <input type="text" placeholder="Username" [(ngModel)]="regUsername" name="regUsername" required>
+                <input type="email" placeholder="Email" [(ngModel)]="regEmail" name="regEmail" required>
+                <input type="password" placeholder="Password" [(ngModel)]="regPassword" name="regPassword" required>
+                <button type="submit">Create</button>
+                <p class="message">Already registered? <a routerLink="/login">Sign In</a></p>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
-import { Tutorials } from "../data/Tutorials.js"
-import { References } from "../data/References.js"
-import { ExercisesandQuizzes } from "../data/ExercisesandQuizzes.js"
+// import { Tutorials } from "../data/Tutorials.js"
+// import { References } from "../data/References.js"
+// import { ExercisesandQuizzes } from "../data/ExercisesandQuizzes.js"
 
 /*******/
 //store mobile menu Content

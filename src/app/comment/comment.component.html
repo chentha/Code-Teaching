@@ -1,0 +1,16 @@
+<!-- src/app/comment/comment.component.html -->
+<div>
+    <h2>Comments</h2>
+    <form (submit)="addComment()">
+        <textarea [(ngModel)]="newCommentText" name="comment" required></textarea>
+        <button type="submit">Add Comment</button>
+    </form>
+    <ul>
+        <li *ngFor="let comment of comments">
+            <img src="../../assets/image/logo.jpg"  class="profile-img"> <!-- Display user image -->
+            <strong>&#64;{{ comment.username }}</strong>: 
+            <small>{{ comment.timestamp | date:'short' }}</small><br>{{ comment.text }}
+            <button (click)="deleteComment(comment.id)">Delete</button>
+        </li>
+    </ul>
+</div>
