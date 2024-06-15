@@ -1,0 +1,439 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<header class="container">
+    <div class="header-left">
+        <a href="#" class="menu-btn">
+            <div class="w3schools-logo">
+                <img src="../../assets/image/logo.jpg" alt="Logo" />
+            </div>
+        </a>
+        <div class="menu-btn" id="Tutorial-btn">
+            Tutorials
+            <i class="fa-solid fa-caret-down"></i>
+        </div>
+        <div class="menu-btn" id="references-btn">
+            References
+            <i class="fa-solid fa-caret-down"></i>
+        </div>
+        <div class="menu-btn" id="exercises-btn">
+            Exercises
+            <i class="fa-solid fa-caret-down"></i>
+        </div>
+        <a routerLink="/video-page" class="menu-btn" id="video-btn">
+            Videos
+        </a>
+    </div>
+
+    <div class="header-right">
+        <div class="toggle_Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="box_sign_in_sing_up">
+            <button type="button" routerLink="/sign-up" class="signup-button login_btn">Sign Up</button>
+            <button type="button" routerLink="/login" class="login-button login_btn">Log In</button>
+        </div>
+    </div>
+</header>
+
+
+<!--mobile menu bar-->
+<div class="mobile-menu-container" id="mobile-menu-nav">
+    <div class="mobile-menu-close-btn">
+        <a href="" id="mobile-Nav-close"><button><i class="fa-solid fa-xmark"></i></button></a>
+    </div>
+    <ul>
+        <div class="menu-btn-mobile_menu " id="tutorial_menuLink_mobile">
+            Tutorials
+            <i class="fa-solid fa-caret-down"></i>
+
+            <div class="nested-navigation-container_content_Mobile mobile_menuActive_tutorial"
+                id="Tutorial_menu_mobile">
+                <h1>Tutorials</h1>
+                <h2>html css</h2>
+
+
+            </div>
+        </div>
+        <div class="menu-btn-mobile_menu " id="references_menuLink_mobile">
+            References
+            <i class="fa-solid fa-caret-down "></i>
+            <div class="nested-navigation-container_content_Mobile mobile_menuActive_tutorial"
+                id="references_menu_mobile">
+                <h1>Tutorials</h1>
+                <h2>html css</h2>
+
+
+            </div>
+        </div>
+        <div class="menu-btn-mobile_menu " id="exercises_menuLink_mobile">
+            Exercises
+            <i class="fa-solid fa-caret-down"></i>
+            <div class="nested-navigation-container_content_Mobile mobile_menuActive_tutorial"
+                id="exercises_menu_mobile">
+                <h1>Tutorials</h1>
+                <h2>html css</h2>
+
+
+            </div>
+        </div>
+    </ul>
+</div>
+
+<!--nested navigation bar-->
+<div class="nested-navigation-container nested_navigation_hidden" id="nested-navigation-container_id">
+    <div class="nested-navigation_container_close-btn" id="nested-navigation-close-Btn">
+        <button><i class="fa-solid fa-xmark" class="menu-btn"></i></button>
+    </div>
+
+    <div class="nested-navigation-container_content" id="nested-navigation-container-contentID">
+        <!---render the menu of all here -->
+    </div>
+</div>
+
+
+
+
+<!------------------------------------------------------------------->
+<section class="courses_card_container container">
+    <h1 class="text-center mb-5">You can watch the video below</h1>
+    <div class="container mb-3">
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <img class="d-block image_avatar" src="../../assets/image/vdo page.jpg" alt="Avatar">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="">
+                    <p class="text_title">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit doloribus repellendus mollitia
+                        vero
+                        voluptates officia laudantium nihil cupiditate, ullam error dolor atque nam necessitatibus
+                        temporibus
+                        veniam quod debitis optio iure? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+                        doloribus
+                        repellendus mollitia vero voluptates officia laudantium nihil cupiditate, ullam error dolor
+                        atque
+                        nam
+                        necessitatibus temporibus veniam quod debitis optio iure?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="title_vdo m-2">
+        <h2>Video can be watched for free</h2>
+        <p>You can choose which video you want to learn below, there are many videos.</p>
+    </div>
+
+    <div class="box_vdo">
+        <h3 class="m-2" style="font-size: 24px;">Video <i class="fa-solid fa-angle-right"></i></h3>
+
+        <div class="card border-0 card_of_vdo mt-3">
+            <div class="card-body">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="vdo_show">
+                                <div class="img_of_vdo" routerLink="/detail-video">
+                                    <div class="box_vdo_image">
+                                        <img class="image_vdo" src="../../assets/image/py vdo.jpg"
+                                            alt="Python Bootcamp">
+                                        <i class="fa-regular fa-circle-play play-icon"></i>
+                                    </div>
+                                    <h3 class="caption">The Complete Python Bootcamp From Zero to Hero in Python....
+                                    </h3>
+                                    <h4 class="name_superviser">Mrr.Dararoth</h4>
+                                    <h5 class="rating">4.7
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <div class="vdo_show">
+                                <div class="img_of_vdo" routerLink="/detail-video">
+                                    <div class="box_vdo_image">
+                                        <img class="image_vdo" src="../../assets/image/java.jpg" alt="Python Bootcamp">
+                                        <i class="fa-regular fa-circle-play play-icon"></i>
+                                    </div>
+                                    <h3 class="caption">The Complete Python Bootcamp From Zero to Hero in Python....
+                                    </h3>
+                                    <h4 class="name_superviser">Mrr.Sakol</h4>
+                                    <h5 class="rating">4.7
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <div class="vdo_show">
+                                <div class="img_of_vdo" routerLink="/detail-video">
+                                    <div class="box_vdo_image">
+                                        <img class="image_vdo" src="../../assets/image/react js.jpg"
+                                            alt="Python Bootcamp">
+                                        <i class="fa-regular fa-circle-play play-icon"></i>
+                                    </div>
+                                    <h3 class="caption">The Complete Python Bootcamp From Zero to Hero in Python....
+                                    </h3>
+                                    <h4 class="name_superviser">Mrr.HengLong</h4>
+                                    <h5 class="rating">4.7
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <div class="vdo_show">
+                                <div class="img_of_vdo" routerLink="/detail-video">
+                                    <div class="box_vdo_image">
+                                        <img class="image_vdo" src="../../assets/image/js lerning.jpg"
+                                            alt="Python Bootcamp">
+                                        <i class="fa-regular fa-circle-play play-icon"></i>
+                                    </div>
+                                    <h3 class="caption">The Complete Python Bootcamp From Zero to Hero in Python....
+                                    </h3>
+                                    <h4 class="name_superviser">Mrr.Dararoth</h4>
+                                    <h5 class="rating">4.7
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <div class="vdo_show">
+                                <div class="img_of_vdo" routerLink="/detail-video">
+                                    <div class="box_vdo_image">
+                                        <img class="image_vdo" src="../../assets/image/html.jpg" alt="Python Bootcamp">
+                                        <i class="fa-regular fa-circle-play play-icon"></i>
+                                    </div>
+                                    <h3 class="caption">The Complete Python Bootcamp From Zero to Hero in Python....
+                                    </h3>
+                                    <h4 class="name_superviser">Mrr.Dararoth</h4>
+                                    <h5 class="rating">4.7
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <div class="vdo_show">
+                                <div class="img_of_vdo" routerLink="/detail-video">
+                                    <div class="box_vdo_image">
+                                        <img class="image_vdo" src="../../assets/image/bootstrap.jpg"
+                                            alt="Python Bootcamp">
+                                        <i class="fa-regular fa-circle-play play-icon"></i>
+                                    </div>
+                                    <h3 class="caption">The Complete Python Bootcamp From Zero to Hero in Python....
+                                    </h3>
+                                    <h4 class="name_superviser">Mrr.Dararoth</h4>
+                                    <h5 class="rating">4.7
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <div class="vdo_show">
+                                <div class="img_of_vdo" routerLink="/detail-video">
+                                    <div class="box_vdo_image">
+                                        <img class="image_vdo" src="../../assets/image/c.jpg" alt="Python Bootcamp">
+                                        <i class="fa-regular fa-circle-play play-icon"></i>
+                                    </div>
+                                    <h3 class="caption">The Complete Python Bootcamp From Zero to Hero in Python....
+                                    </h3>
+                                    <h4 class="name_superviser">Mrr.Dararoth</h4>
+                                    <h5 class="rating">4.7
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <div class="vdo_show">
+                                <div class="img_of_vdo" routerLink="/detail-video">
+                                    <div class="box_vdo_image">
+                                        <img class="image_vdo" src="../../assets/image/sql.png" alt="Python Bootcamp">
+                                        <i class="fa-regular fa-circle-play play-icon"></i>
+                                    </div>
+                                    <h3 class="caption">The Complete Python Bootcamp From Zero to Hero in Python....
+                                    </h3>
+                                    <h4 class="name_superviser">Mrr.Dararoth</h4>
+                                    <h5 class="rating">4.7
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="m-2">Top categories</h2>
+        <div class="box_cate">
+            <div class="col-md-12">
+                <div class="row">
+
+                    <div class="col-md-3 box_sub_show_cate">
+                        <div class="box_show_cate">
+                            <img class="image_cate" src="../../assets/image/cate1.jpg" alt="">
+                            <h5 class="title_cate text-center">Design</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 box_sub_show_cate">
+                        <div class="box_show_cate">
+                            <img class="image_cate" src="../../assets/image/cate2.jpg" alt="">
+                            <h5 class="title_cate text-center">Developer</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 box_sub_show_cate">
+                        <div class="box_show_cate">
+                            <img class="image_cate" src="../../assets/image/cate3.jpg" alt="">
+                            <h5 class="title_cate text-center">Marketing</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 box_sub_show_cate">
+                        <div class="box_show_cate">
+                            <img class="image_cate" src="../../assets/image/cate4.jpg" alt="">
+                            <h5 class="title_cate text-center">IT and Software</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 box_sub_show_cate">
+                        <div class="box_show_cate">
+                            <img class="image_cate" src="../../assets/image/cate5.jpg" alt="">
+                            <h5 class="title_cate text-center">Mobile Developer</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 box_sub_show_cate">
+                        <div class="box_show_cate">
+                            <img class="image_cate" src="../../assets/image/cate6.jpg" alt="">
+                            <h5 class="title_cate text-center">UX UI</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 box_sub_show_cate">
+                        <div class="box_show_cate">
+                            <img class="image_cate" src="../../assets/image/cate7.jpg" alt="">
+                            <h5 class="title_cate text-center">Data Analytics</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 box_sub_show_cate">
+                        <div class="box_show_cate">
+                            <img class="image_cate" src="../../assets/image/cate8.jpg" alt="">
+                            <h5 class="title_cate text-center">Web Development</h5>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div> <br><br><br>
+
+</section>
+
+
+<footer class="footer ">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>learn Tutorials</h4>
+                <ul>
+                    <li><a href="#">Learn C , C++</a></li>
+                    <li><a href="#">Learn HTML</a></li>
+                    <li><a href="#">Learn CSS</a></li>
+                    <li><a href="#">Learn JS</a></li>
+                    <li><a href="#">Learn Python</a></li>
+                    <li><a href="#">Learn Java</a></li>
+                    <li><a href="#">Learn SQL</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>HELP</h4>
+                <ul>
+                    <li><a href="#">Help Service</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>CANTACT</h4>
+                <ul>
+                    <li><a href="#">Address: Phnom Penh</a></li>
+                    <li><a href="#">Contact NO: 097234455</a></li>
+                    <li><a href="#">Subscribe Us</a></li>
+                    <li><a href="#">Privacy Pollcy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<section id="copy-right">
+    <div class="copy-right-sec"><i class="fa-solid fa-copyright"></i>
+        Copyright We teach Code. Developed By <a href="#">We Teach Code.</a>
+    </div>
+
+</section>
