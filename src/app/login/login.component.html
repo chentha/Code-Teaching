@@ -1,13 +1,13 @@
 <div class="container1">
   <div class="login-page">
-    <div *ngIf="alert !== null" class="alert" [ngClass]="{'success': alert, 'error': !alert}">
-      {{ alert ? 'Registration successful' : 'User already exists. Please choose a different username.' }}
-    </div>
+    <!-- <div *ngIf="alertMessage" class="alert" [ngClass]="{'success': alert, 'error': !alert}">
+      {{ alertMessage }}
+    </div> -->
     <div class="form">
       <h2 class="mb-5">Login</h2>
-      <form class="login-form" (submit)="login()">
-        <input [(ngModel)]="username" type="text" placeholder="username" />
-        <input [(ngModel)]="password" type="password" placeholder="password" />
+      <form class="login-form" (ngSubmit)="login()">
+        <input [(ngModel)]="username" type="text" placeholder="username" name="username" required />
+        <input [(ngModel)]="password" type="password" placeholder="password" name="password" required />
         <button type="submit">login</button>
         <p class="message">Not registered? <a href="#" routerLink="/sign-up">Create an account</a></p>
       </form>

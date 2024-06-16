@@ -7,10 +7,11 @@ import { AuthService } from '../core/auth.service';
 interface Comment {
   id: number;
   userId: number;
-  username: string;  // Add username field
+  username: string;
   text: string;
   timestamp: Date;
 }
+
 @Component({
   selector: 'app-comment',
   templateUrl: './comment.component.html',

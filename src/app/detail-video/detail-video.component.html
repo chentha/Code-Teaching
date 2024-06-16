@@ -99,8 +99,60 @@
 <section class="courses_card_container container">
 
     <div class="col-md-12">
-        <div class="col-md-8 bg-yellow">
-sdf
+        <div class="col-md-8" style="padding: 20px;">
+            <div class="card">
+                <video class="video_vdo" controls>
+                    <source src="../../assets/vdo/Learn PHP in 15 minutes.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="box_text_title p-2 mb-4">
+                    <h2 class="title_vdo">
+                        C Programming Full Course for Beginners - Learn C in 2022.......
+                    </h2>
+                    <h3 class="des_vdo">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio neque, quis corporis ducimus
+                        sapiente
+                        eaque iusto dignissimos molestiae officiis nulla ratione sed eum quaerat aperiam nemo modi
+                        repellat
+                        earum aut?
+                    </h3>
+                </div>
+            </div>
+
+            <div>
+
+                <div class="add_comments p-1 mt-4">
+                    <form (submit)="addComment()">
+                        <div class="box_pf" style="float: left;">
+                            <img class="img_cmm" src="../../assets/image/logo.jpg" alt="">
+                        </div>
+                        <div class="box_input_cmm">
+                            <input [(ngModel)]="newCommentText" name="comment" required type="text" class="input_cmm"
+                                placeholder="Add a Comment...">
+                            <hr>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="show_cmm mt-4 p-1">
+                    <div>
+                        <div *ngFor="let comment of comments" class="mb-3">
+                            <div class="pf_user_cmm">
+                                <img src="../../assets/image/logo.jpg" class="img_cmm me-2">
+                            </div>
+                            <div class="pf_text_cmm">
+                                <strong>&#64;{{ comment.username }}</strong>
+                                <small class="text_show_cmm">{{ comment.timestamp | date }}</small><br>
+                                <div class="show_text_user_cmm">{{ comment.text }}</div>
+                            </div>
+
+
+                            <!-- <button (click)="deleteComment(comment.id)">Delete</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="col-md-4">
@@ -294,71 +346,6 @@ sdf
                         </div>
 
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="m-2">Top categories</h2>
-        <div class="box_cate">
-            <div class="col-md-12">
-                <div class="row">
-
-                    <div class="col-md-3 box_sub_show_cate">
-                        <div class="box_show_cate">
-                            <img class="image_cate" src="../../assets/image/cate1.jpg" alt="">
-                            <h5 class="title_cate text-center">Design</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 box_sub_show_cate">
-                        <div class="box_show_cate">
-                            <img class="image_cate" src="../../assets/image/cate2.jpg" alt="">
-                            <h5 class="title_cate text-center">Developer</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 box_sub_show_cate">
-                        <div class="box_show_cate">
-                            <img class="image_cate" src="../../assets/image/cate3.jpg" alt="">
-                            <h5 class="title_cate text-center">Marketing</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 box_sub_show_cate">
-                        <div class="box_show_cate">
-                            <img class="image_cate" src="../../assets/image/cate4.jpg" alt="">
-                            <h5 class="title_cate text-center">IT and Software</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 box_sub_show_cate">
-                        <div class="box_show_cate">
-                            <img class="image_cate" src="../../assets/image/cate5.jpg" alt="">
-                            <h5 class="title_cate text-center">Mobile Developer</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 box_sub_show_cate">
-                        <div class="box_show_cate">
-                            <img class="image_cate" src="../../assets/image/cate6.jpg" alt="">
-                            <h5 class="title_cate text-center">UX UI</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 box_sub_show_cate">
-                        <div class="box_show_cate">
-                            <img class="image_cate" src="../../assets/image/cate7.jpg" alt="">
-                            <h5 class="title_cate text-center">Data Analytics</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 box_sub_show_cate">
-                        <div class="box_show_cate">
-                            <img class="image_cate" src="../../assets/image/cate8.jpg" alt="">
-                            <h5 class="title_cate text-center">Web Development</h5>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>

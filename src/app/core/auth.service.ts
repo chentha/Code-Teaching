@@ -1,9 +1,8 @@
 // src/app/auth.service.ts
 import { Injectable } from '@angular/core';
 
-
 interface User {
-  email: any;
+  email: string;
   id: number;
   username: string;
   password: string;
@@ -20,8 +19,8 @@ export class AuthService {
 
   register(user: User): boolean {
     let users = this.getUsers();
-    if (users.find(u => u.username === user.username || u.email === user.email)) {
-      return false; // User already exists
+    if (users.find(u => u.username === user.username || u.password === user.password)) {
+      return false; // Username or email already exists
     }
     user.id = new Date().getTime();
     users.push(user);
