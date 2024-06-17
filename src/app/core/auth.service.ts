@@ -1,4 +1,3 @@
-// src/app/auth.service.ts
 import { Injectable } from '@angular/core';
 
 interface User {
@@ -6,18 +5,13 @@ interface User {
   id: number;
   username: string;
   password: string;
+  image: string | null; // Include the image property
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  updateUserImage(image: any) {
-    throw new Error('Method not implemented.');
-  }
-  updateUsername(username: string) {
-    throw new Error('Method not implemented.');
-  }
   private storageKey = 'users';
   private currentUserKey = 'currentUser';
   currentUserChanged: any;
@@ -26,7 +20,7 @@ export class AuthService {
 
   register(user: User): boolean {
     let users = this.getUsers();
-    if (users.find(u => u.username === user.username || u.password === user.password)) {
+    if (users.find(u => u.username === user.username || u.email === user.email)) { // Check username or email
       return false; // Username or email already exists
     }
     user.id = new Date().getTime();
@@ -37,7 +31,7 @@ export class AuthService {
 
   login(username: string, password: string): boolean {
     const users = this.getUsers();
-    const user = users.find(u => u.username === username || u.password === password);
+    const user = users.find(u => u.username === username && u.password === password); // Check both username and password
     if (user) {
       localStorage.setItem(this.currentUserKey, JSON.stringify(user));
       return true;
@@ -49,18 +43,37 @@ export class AuthService {
     localStorage.removeItem(this.currentUserKey);
   }
 
-  // getCurrentUser(): User | null {
-  //   const userJson = localStorage.getItem(this.currentUserKey);
-  //   return userJson ? JSON.parse(userJson) : null;
-  // }
-
   getCurrentUser(): User | null {
-    const user = localStorage.getItem('currentUser');
-    return user ? JSON.parse(user) : null;
+    const userJson = localStorage.getItem(this.currentUserKey);
+    return userJson ? JSON.parse(userJson) : null;
   }
 
   private getUsers(): User[] {
     const usersJson = localStorage.getItem(this.storageKey);
     return usersJson ? JSON.parse(usersJson) : [];
+  }
+
+  updateUserImage(image: string): void {
+    const currentUser = this.getCurrentUser();
+    if (currentUser) {
+      currentUser.image = image;
+      localStorage.setItem(this.currentUserKey, JSON.stringify(currentUser));
+      this.updateUserInStorage(currentUser);
+    }
+  }
+
+  updateUsername(username: string): void {
+    const currentUser = this.getCurrentUser();
+    if (currentUser) {
+      currentUser.username = username;
+      localStorage.setItem(this.currentUserKey, JSON.stringify(currentUser));
+      this.updateUserInStorage(currentUser);
+    }
+  }
+
+  private updateUserInStorage(updatedUser: User): void {
+    let users = this.getUsers();
+    users = users.map(user => user.id === updatedUser.id ? updatedUser : user);
+    localStorage.setItem(this.storageKey, JSON.stringify(users));
   }
 }

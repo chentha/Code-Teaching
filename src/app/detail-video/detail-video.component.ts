@@ -17,6 +17,9 @@ interface Comment {
 export class DetailVideoComponent {
   comments: Comment[] = [];
   newCommentText = '';
+  isMenuOpen: boolean = false;
+  activeSubMenu: string | null = null;
+  user: { email: string; image: string | null } | null = null;
 
   isOpen = false; 
 
@@ -24,10 +27,30 @@ export class DetailVideoComponent {
     this.isOpen = !this.isOpen; 
   }
 
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
+    this.activeSubMenu = null;
+  }
+
+  toggleSubMenu(menu: string): void {
+    if (this.activeSubMenu === menu) {
+      this.activeSubMenu = null;
+    } else {
+      this.activeSubMenu = menu;
+    }
+  }
+
+  logout(): void {
+    this.authService.logout();
+    this.user = null;
+  }
+
   constructor(private commentService: CommentService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.loadComments();
+    this.user = this.authService.getCurrentUser();
   }
 
   loadComments(): void {

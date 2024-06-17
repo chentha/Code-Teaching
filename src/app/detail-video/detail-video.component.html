@@ -2,40 +2,52 @@
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<header class="container">
-    <div class="header-left">
-        <a href="#" class="menu-btn">
-            <div class="w3schools-logo">
-                <img src="../../assets/image/logo.jpg" alt="Logo" />
-            </div>
-        </a>
-        <div class="menu-btn" id="Tutorial-btn">
-            Tutorials
-            <i class="fa-solid fa-caret-down"></i>
-        </div>
-        <div class="menu-btn" id="references-btn">
-            References
-            <i class="fa-solid fa-caret-down"></i>
-        </div>
-        <div class="menu-btn" id="exercises-btn">
-            Exercises
-            <i class="fa-solid fa-caret-down"></i>
-        </div>
-        <a routerLink="/video-page" class="menu-btn" id="video-btn">
-            Videos
-        </a>
-    </div>
 
-    <div class="header-right">
-        <div class="toggle_Search">
-            <i class="fa-solid fa-magnifying-glass"></i>
+    <header class="container navbar_main">
+        <div class="header-left">
+            <a href="#" class="menu-btn">
+                <div class="w3schools-logo">
+                    <img class="logo_project" src="../../assets/image/logo.jpg" alt="Logo" />
+                </div>
+            </a>
+            <div class="menu-btn" id="Tutorial-btn">
+                Tutorials
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="menu-btn" id="references-btn">
+                References
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="menu-btn" id="exercises-btn">
+                Exercises
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <a routerLink="/video-page" class="menu-btn" id="video-btn">
+                Videos
+            </a>
         </div>
-        <div class="box_sign_in_sing_up">
-            <button type="button" routerLink="/sign-up" class="signup-button login_btn">Sign Up</button>
-            <button type="button" routerLink="/login" class="login-button login_btn">Log In</button>
+    
+        <div class="header-right">
+            <div class="toggle_Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div *ngIf="user; else loggedOut" class="" style="float: left;">
+                <div class="profile-container">
+                    <img class="box_user_profile" routerLink="/profile-user"
+                        [src]="user.image || '../../assets/image/default.webp'" >
+                    <button type="button" (click)="logout()">Log Out</button>
+                </div>
+            </div>
+            <ng-template #loggedOut>
+                <div routerLink="/login" class="box_sign_in_sing_up">
+                    <button type="button" routerLink="/sing-up" class="login_btn1">Sign Up</button>
+                    <!-- <button type="button" routerLink="/login" class=" login_btn">Log In</button> -->
+                    Log In
+                </div>
+            </ng-template>
         </div>
-    </div>
-</header>
+    
+    </header>
 
 
 <!--mobile menu bar-->
@@ -124,8 +136,8 @@
 
                     <div class="add_comments p-1 mt-4">
                         <form (submit)="addComment()">
-                            <div class="box_pf" style="float: left;">
-                                <img class="img_cmm" src="../../assets/image/logo.jpg" alt="">
+                            <div class="box_pf" style="float: left;" *ngIf="user">
+                                <img class="img_cmm" [src]="user.image || '../../assets/image/default.webp'" alt="">
                             </div>
                             <div class="box_input_cmm">
                                 <input [(ngModel)]="newCommentText" name="comment" required type="text"
@@ -139,8 +151,8 @@
                     <div class="show_cmm mt-4 p-1">
                         <div>
                             <div *ngFor="let comment of comments" class="mb-3 box_blog_cmm">
-                                <div class="pf_user_cmm">
-                                    <img src="../../assets/image/logo.jpg" class="img_cmm me-2">
+                                <div class="pf_user_cmm"  *ngIf="user">
+                                    <img [src]="user.image || '../../assets/image/default.webp'" class="img_cmm me-2">
                                 </div>
                                 <div class="pf_text_cmm">
                                     <strong>&#64;{{ comment.username }}</strong>&nbsp;

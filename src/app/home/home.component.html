@@ -26,42 +26,25 @@
         </a>
     </div>
 
-    <!-- <div class="header-right">
-        <div class="toggle_Search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-        <div class="box_sign_in_sing_up">
-            <button type="button" routerLink="/sing-up" class="signup-button login_btn">Sign Up</button>
-            <button type="button" routerLink="/login" class="login-button login_btn">Log In</button>
-        </div>
-    </div> -->
-
-
-    <!-- src/app/header/header.component.html -->
     <div class="header-right">
         <div class="toggle_Search">
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-        <div class="">
-
+        <div *ngIf="user; else loggedOut" class="" style="float: left;">
             <div class="profile-container">
-                <div *ngIf="user">
-                  <img [src]="user.image || 'path/to/default/image.webp'" alt="User Image">
-                  <p>{{ user.email }}</p>
-                </div>
-              
+                <img class="box_user_profile" routerLink="/profile-user"
+                    [src]="user.image || '../../assets/image/default.webp'" >
                 <button type="button" (click)="logout()">Log Out</button>
-              </div>
-              
+            </div>
         </div>
         <ng-template #loggedOut>
-            <div class="box_sign_in_sing_up">
-                <button type="button" routerLink="/register" class="signup-button login_btn">Sign Up</button>
-                <button type="button" routerLink="/login" class="login-button login_btn">Log In</button>
+            <div routerLink="/login" class="box_sign_in_sing_up">
+                <button type="button" routerLink="/sing-up" class="login_btn1">Sign Up</button>
+                <!-- <button type="button" routerLink="/login" class=" login_btn">Log In</button> -->
+                Log In
             </div>
         </ng-template>
     </div>
-
 
 </header>
 

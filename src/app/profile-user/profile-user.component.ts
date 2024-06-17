@@ -7,15 +7,17 @@ import { AuthService } from '../core/auth.service';
   styleUrls: ['./profile-user.component.scss']
 })
 export class ProfileUserComponent {
-  showProfile: boolean = true;  
+  showProfile: boolean = true;
   showGoal: boolean = false;
   showTest: boolean = false;
-  showSkill: boolean = false; 
-  showPractice: boolean = false; 
+  showSkill: boolean = false;
+  showPractice: boolean = false;
   activeTab: string | undefined;
   currentUser: any = {}; // Initialize currentUser as an empty object
-  imageUrl: string = '../../assets/image/default.webp'; 
+  imageUrl: string = '../../assets/image/default.webp';
   username: string = '';
+  newUsername: string = ''; // New username input field
+  user: { email: string; image: string | null } | null = null;
 
   constructor(private authService: AuthService) {
     const storedUser = localStorage.getItem('currentUser');
@@ -25,6 +27,11 @@ export class ProfileUserComponent {
       this.imageUrl = this.currentUser.image || '../../assets/image/default.webp';
     }
   }
+
+  ngOnInit(): void {
+    this.user = this.authService.getCurrentUser();
+  }
+
 
   ShowProfile() {
     this.showProfile = true;
@@ -58,6 +65,11 @@ export class ProfileUserComponent {
     this.showPractice = false;
   }
 
+  logout(): void {
+    this.authService.logout();
+    this.user = null;
+  }
+
   ShowPrac() {
     this.showProfile = false;
     this.showGoal = false;
@@ -77,13 +89,20 @@ export class ProfileUserComponent {
     }
   }
 
-  uploadImage() {
-    if (this.imageUrl !== '../../assets/image/default.webp') {
-      this.currentUser.image = this.imageUrl;
+  updateUser() {
+    if (this.newUsername.trim() !== '' || this.imageUrl !== '../../assets/image/default.webp') {
+      if (this.newUsername.trim() !== '') {
+        this.currentUser.username = this.newUsername.trim();
+        this.username = this.newUsername.trim(); // Update displayed username
+      }
+      if (this.imageUrl !== '../../assets/image/default.webp') {
+        this.currentUser.image = this.imageUrl;
+      }
       localStorage.setItem('currentUser', JSON.stringify(this.currentUser)); // Update localStorage
-      alert('Image uploaded successfully');
+      alert('Profile updated successfully');
+      this.newUsername = ''; // Clear input field for username (if any)
     } else {
-      alert('Please select an image');
+      alert('Please enter a new username or select an image');
     }
   }
 }

@@ -4,7 +4,7 @@ import { AuthService } from '../core/auth.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'] // Note: this should be styleUrls, not styleUrl
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
   isMenuOpen: boolean = false;
@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
   }
 
   logout(): void {
-    this.authService.logout(); // Call logout method from AuthService
-    this.user = null; // Clear user information
+    this.authService.logout();
+    this.user = null;
   }
 }

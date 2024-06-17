@@ -20,11 +20,11 @@ export class SignUpComponent {
       id: 0, 
       username: this.regUsername,
       email: this.regEmail,
-      password: this.regPassword
+      password: this.regPassword,
+      image: null // Include the image property
     };
 
     if (this.authService.register(registrationData)) {
-      
       this.alert = true; // Registration successful
       console.log('Registration successful. Alert:', this.alert);
     } else {
