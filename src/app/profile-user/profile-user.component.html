@@ -1,0 +1,231 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<header class="container">
+    <div class="header-left">
+        <a href="#" class="menu-btn">
+            <div class="w3schools-logo">
+                <img src="../../assets/image/logo.jpg" alt="Logo" />
+            </div>
+        </a>
+        <div class="menu-btn" id="Tutorial-btn">
+            Tutorials
+            <i class="fa-solid fa-caret-down"></i>
+        </div>
+        <div class="menu-btn" id="references-btn">
+            References
+            <i class="fa-solid fa-caret-down"></i>
+        </div>
+        <div class="menu-btn" id="exercises-btn">
+            Exercises
+            <i class="fa-solid fa-caret-down"></i>
+        </div>
+        <a routerLink="/video-page" class="menu-btn" id="video-btn">
+            Videos
+        </a>
+    </div>
+
+    <div class="header-right">
+        <div class="toggle_Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="box_sign_in_sing_up">
+            <button type="button" routerLink="/sign-up" class="signup-button login_btn">Sign Up</button>
+            <button type="button" routerLink="/login" class="login-button login_btn">Log In</button>
+        </div>
+    </div>
+</header>
+
+
+<!--mobile menu bar-->
+<div class="mobile-menu-container" id="mobile-menu-nav">
+    <div class="mobile-menu-close-btn">
+        <a href="" id="mobile-Nav-close"><button><i class="fa-solid fa-xmark"></i></button></a>
+    </div>
+    <ul>
+        <div class="menu-btn-mobile_menu " id="tutorial_menuLink_mobile">
+            Tutorials
+            <i class="fa-solid fa-caret-down"></i>
+
+            <div class="nested-navigation-container_content_Mobile mobile_menuActive_tutorial"
+                id="Tutorial_menu_mobile">
+                <h1>Tutorials</h1>
+                <h2>html css</h2>
+
+
+            </div>
+        </div>
+        <div class="menu-btn-mobile_menu " id="references_menuLink_mobile">
+            References
+            <i class="fa-solid fa-caret-down "></i>
+            <div class="nested-navigation-container_content_Mobile mobile_menuActive_tutorial"
+                id="references_menu_mobile">
+                <h1>Tutorials</h1>
+                <h2>html css</h2>
+
+
+            </div>
+        </div>
+        <div class="menu-btn-mobile_menu " id="exercises_menuLink_mobile">
+            Exercises
+            <i class="fa-solid fa-caret-down"></i>
+            <div class="nested-navigation-container_content_Mobile mobile_menuActive_tutorial"
+                id="exercises_menu_mobile">
+                <h1>Tutorials</h1>
+                <h2>html css</h2>
+
+
+            </div>
+        </div>
+    </ul>
+</div>
+
+<!--nested navigation bar-->
+<div class="nested-navigation-container nested_navigation_hidden" id="nested-navigation-container_id">
+    <div class="nested-navigation_container_close-btn" id="nested-navigation-close-Btn">
+        <button><i class="fa-solid fa-xmark" class="menu-btn"></i></button>
+    </div>
+
+    <div class="nested-navigation-container_content" id="nested-navigation-container-contentID">
+        <!---render the menu of all here -->
+    </div>
+</div>
+
+
+
+
+<!------------------------------------------------------------------->
+<section class="courses_card_container container">
+    <div class="row">
+        <div class="col-md-3 p-3">
+            <ul class="ul">
+                <li class="li" (click)="ShowProfile()"><i class="fa-solid fa-table-columns icon_show"></i> My DashBoard
+                </li>
+                <li class="li" (click)="ShowGoal()"><i class="fa-solid fa-bullseye icon_show"></i> Goals</li>
+                <li class="li" (click)="ShowTest()"><i class="fa-regular fa-file-lines icon_show"></i> Tests</li>
+                <li class="li" (click)="ShowSkill()"><i class="fa-solid fa-fill-drip icon_show"></i> Skills</li>
+                <li class="li" (click)="ShowPrac()"><i class="fa-solid fa-stethoscope icon_show"></i> Practice</li>
+            </ul>
+        </div>
+
+
+        <div class="col-md-9" *ngIf="showProfile">
+            <div class="card-body">
+                <div class="col-md-4 p-3" style="border: 1px solid red;">
+                    <h3 class="text-center">My Profile</h3>
+                    <div class="box_upload_img">
+                        <div class="file-input-container">
+                          <input type="file" id="file-input" class="file-input" accept="image/*" (change)="onFileSelected($event)">
+                          <label for="file-input" class="file-input-label">
+                            <img id="avatar-preview" [src]="imageUrl" alt="Avatar">
+                          </label>
+                          <input type="text" [(ngModel)]="username" class="show_username_user text-center">
+                          <button (click)="uploadImage()" class="upload-button">Upload</button>
+                       
+                        </div>
+                      </div>
+                      
+
+                    <!-- <div class="box_upload_img">
+                        <div class="file-input-container">
+                          <input type="file" id="file-input" class="file-input" accept="image/*" (change)="onFileSelected($event)">
+                          <label for="file-input" class="file-input-label">
+                            <img id="avatar-preview" [src]="imageUrl" alt="Avatar">
+                          </label>
+                          <h2 class="show_username_user">{{ username }}</h2>
+                        </div>
+                        <div class="username-input-container">
+                          <input type="text" [(ngModel)]="username" placeholder="Enter username" class="username-input">
+                          <button (click)="uploadImage()" class="upload-button">Upload</button>
+                        </div>
+                      </div> -->
+                      
+                </div>
+
+                <div class="col-md-5">
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col-md-9" *ngIf="showGoal">
+            <h1>hi</h1>
+
+        </div>
+
+        <div class="col-md-9" *ngIf="showTest">
+            <h1>hi</h1>
+
+        </div>
+
+        <div class="col-md-9" *ngIf="showSkill">
+            <h1>hi</h1>
+
+        </div>
+
+        <div class="col-md-9" *ngIf="showPractice">
+            <h1>hi</h1>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer class="footer ">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>learn Tutorials</h4>
+                <ul>
+                    <li><a href="#">Learn C , C++</a></li>
+                    <li><a href="#">Learn HTML</a></li>
+                    <li><a href="#">Learn CSS</a></li>
+                    <li><a href="#">Learn JS</a></li>
+                    <li><a href="#">Learn Python</a></li>
+                    <li><a href="#">Learn Java</a></li>
+                    <li><a href="#">Learn SQL</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>HELP</h4>
+                <ul>
+                    <li><a href="#">Help Service</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>CANTACT</h4>
+                <ul>
+                    <li><a href="#">Address: Phnom Penh</a></li>
+                    <li><a href="#">Contact NO: 097234455</a></li>
+                    <li><a href="#">Subscribe Us</a></li>
+                    <li><a href="#">Privacy Pollcy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<section id="copy-right">
+    <div class="copy-right-sec"><i class="fa-solid fa-copyright"></i>
+        Copyright We teach Code. Developed By <a href="#">We Teach Code.</a>
+    </div>
+
+</section>

@@ -2,11 +2,11 @@
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<header >
+<header class="container navbar_main">
     <div class="header-left">
         <a href="#" class="menu-btn">
             <div class="w3schools-logo">
-                <img src="../../assets/image/logo.jpg" alt="Logo" />
+                <img class="logo_project" src="../../assets/image/logo.jpg" alt="Logo" />
             </div>
         </a>
         <div class="menu-btn" id="Tutorial-btn">
@@ -26,7 +26,7 @@
         </a>
     </div>
 
-    <div class="header-right">
+    <!-- <div class="header-right">
         <div class="toggle_Search">
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
@@ -34,7 +34,35 @@
             <button type="button" routerLink="/sing-up" class="signup-button login_btn">Sign Up</button>
             <button type="button" routerLink="/login" class="login-button login_btn">Log In</button>
         </div>
+    </div> -->
+
+
+    <!-- src/app/header/header.component.html -->
+    <div class="header-right">
+        <div class="toggle_Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="">
+
+            <div class="profile-container">
+                <div *ngIf="user">
+                  <img [src]="user.image || 'path/to/default/image.webp'" alt="User Image">
+                  <p>{{ user.email }}</p>
+                </div>
+              
+                <button type="button" (click)="logout()">Log Out</button>
+              </div>
+              
+        </div>
+        <ng-template #loggedOut>
+            <div class="box_sign_in_sing_up">
+                <button type="button" routerLink="/register" class="signup-button login_btn">Sign Up</button>
+                <button type="button" routerLink="/login" class="login-button login_btn">Log In</button>
+            </div>
+        </ng-template>
     </div>
+
+
 </header>
 
 
@@ -46,8 +74,7 @@
     <ul>
         <div class="menu-btn-mobile_menu " id="tutorial_menuLink_mobile">
             Tutorials
-            <i
-             class="fa-solid fa-caret-down"></i>
+            <i class="fa-solid fa-caret-down"></i>
 
             <div class="nested-navigation-container_content_Mobile mobile_menuActive_tutorial"
                 id="Tutorial_menu_mobile">
@@ -346,4 +373,3 @@
     </div>
 
 </section>
-

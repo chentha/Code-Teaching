@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { VideoPageComponent } from './video-page/video-page.component';
 import { DetailVideoComponent } from './detail-video/detail-video.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { ProfileUserComponent } from './profile-user/profile-user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'comments', component: CommentComponent },
   { path: 'video-page', component: VideoPageComponent },
   { path: 'detail-video', component: DetailVideoComponent },
+  { path: 'profile-user', component: ProfileUserComponent },
 ];
 
 @NgModule({

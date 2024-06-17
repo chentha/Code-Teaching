@@ -10,6 +10,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { CommonModule } from '@angular/common';
 import { DetailVideoComponent } from './detail-video/detail-video.component';
 import { VideoPageComponent } from './video-page/video-page.component';
+import { ProfileUserComponent } from './profile-user/profile-user.component';
+import { AuthService } from './core/auth.service';
 
 @NgModule({
   declarations: [
@@ -19,15 +21,16 @@ import { VideoPageComponent } from './video-page/video-page.component';
     SignUpComponent,
     HomeComponent,
     DetailVideoComponent,
-    VideoPageComponent
+    VideoPageComponent,
+    ProfileUserComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    CommonModule
+    CommonModule,
   ],
-  providers: [],
+  providers: [AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

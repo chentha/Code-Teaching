@@ -99,65 +99,196 @@
 <section class="courses_card_container container">
 
     <div class="col-md-12">
-        <div class="col-md-8" style="padding: 20px;">
-            <div class="card">
-                <video class="video_vdo" controls>
-                    <source src="../../assets/vdo/Learn PHP in 15 minutes.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="box_text_title p-2 mb-4">
-                    <h2 class="title_vdo">
-                        C Programming Full Course for Beginners - Learn C in 2022.......
-                    </h2>
-                    <h3 class="des_vdo">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio neque, quis corporis ducimus
-                        sapiente
-                        eaque iusto dignissimos molestiae officiis nulla ratione sed eum quaerat aperiam nemo modi
-                        repellat
-                        earum aut?
-                    </h3>
+        <div class="row">
+            <div class="col-md-8" style="padding: 20px;">
+                <div class="card">
+                    <video class="video_vdo" controls>
+                        <source src="../../assets/vdo/Learn PHP in 15 minutes.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="box_text_title p-2 mb-4">
+                        <h2 class="title_vdo">
+                            C Programming Full Course for Beginners - Learn C in 2022.......
+                        </h2>
+                        <h3 class="des_vdo">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio neque, quis corporis ducimus
+                            sapiente
+                            eaque iusto dignissimos molestiae officiis nulla ratione sed eum quaerat aperiam nemo modi
+                            repellat
+                            earum aut?
+                        </h3>
+                    </div>
+                </div>
+
+                <div>
+
+                    <div class="add_comments p-1 mt-4">
+                        <form (submit)="addComment()">
+                            <div class="box_pf" style="float: left;">
+                                <img class="img_cmm" src="../../assets/image/logo.jpg" alt="">
+                            </div>
+                            <div class="box_input_cmm">
+                                <input [(ngModel)]="newCommentText" name="comment" required type="text"
+                                    class="input_cmm" placeholder="Add a Comment...">
+                                <hr>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <div class="show_cmm mt-4 p-1">
+                        <div>
+                            <div *ngFor="let comment of comments" class="mb-3 box_blog_cmm">
+                                <div class="pf_user_cmm">
+                                    <img src="../../assets/image/logo.jpg" class="img_cmm me-2">
+                                </div>
+                                <div class="pf_text_cmm">
+                                    <strong>&#64;{{ comment.username }}</strong>&nbsp;
+                                    <small class="text_show_cmm">{{ comment.timestamp | date }}</small><br>
+                                    <div class="show_text_user_cmm">{{ comment.text }}</div>
+                                </div>
+
+                                <div class="box_delete_cmm">
+                                    <a class="floating-btn" (click)="toggleMenu()">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </a>
+                                    <menu [ngClass]="{'active': isOpen}">
+                                        <span (click)="deleteComment(comment.id)"> <i
+                                                class="fa-solid fa-trash-can"></i></span>
+                                    </menu>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div>
-
-                <div class="add_comments p-1 mt-4">
-                    <form (submit)="addComment()">
-                        <div class="box_pf" style="float: left;">
-                            <img class="img_cmm" src="../../assets/image/logo.jpg" alt="">
-                        </div>
-                        <div class="box_input_cmm">
-                            <input [(ngModel)]="newCommentText" name="comment" required type="text" class="input_cmm"
-                                placeholder="Add a Comment...">
-                            <hr>
-                        </div>
-                    </form>
-                </div>
-
-
-                <div class="show_cmm mt-4 p-1">
-                    <div>
-                        <div *ngFor="let comment of comments" class="mb-3">
-                            <div class="pf_user_cmm">
-                                <img src="../../assets/image/logo.jpg" class="img_cmm me-2">
+            <div class="col-md-4">
+                <div class="box_more_vdo">
+                    <div class="card border-0">
+                        <h4 class="c_content">Course Content</h4>
+                        <div class="content_vdo mt-3">
+                            <div style="padding-top: 5px; padding-left: 10px;">
+                                <h2 class="title_content">1. Introduction</h2>
+                                <div style="font-size: 12px; color:grey;">
+                                    <i class="fa-solid fa-film"></i> 12min
+                                </div>
                             </div>
-                            <div class="pf_text_cmm">
-                                <strong>&#64;{{ comment.username }}</strong>
-                                <small class="text_show_cmm">{{ comment.timestamp | date }}</small><br>
-                                <div class="show_text_user_cmm">{{ comment.text }}</div>
+                        </div>
+
+                        <div class="content_vdo ">
+                            <div style="padding-top: 5px; padding-left: 10px;">
+                                <h2 class="title_content">2. Making Animations Work with Angular</h2>
+                                <div style="font-size: 12px; color:grey;">
+                                    <i class="fa-solid fa-film"></i> 10min
+                                </div>
                             </div>
+                        </div>
 
+                        <div class="content_vdo ">
+                            <div style="padding-top: 5px; padding-left: 10px;">
+                                <h2 class="title_content">3. Advanced Transitions</h2>
+                                <div style="font-size: 12px; color:grey;">
+                                    <i class="fa-solid fa-film"></i> 8min
+                                </div>
+                            </div>
+                        </div>
 
-                            <!-- <button (click)="deleteComment(comment.id)">Delete</button> -->
+                        <div class="content_vdo ">
+                            <div style="padding-top: 5px; padding-left: 10px;">
+                                <h2 class="title_content">4. Transition Phases</h2>
+                                <div style="font-size: 12px; color:grey;">
+                                    <i class="fa-solid fa-film"></i> 14min
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content_vdo ">
+                            <div style="padding-top: 5px; padding-left: 10px;">
+                                <h2 class="title_content">5. Using Keyframes for Animations</h2>
+                                <div style="font-size: 12px; color:grey;">
+                                    <i class="fa-solid fa-film"></i> 12min
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content_vdo ">
+                            <div style="padding-top: 5px; padding-left: 10px;">
+                                <h2 class="title_content">6. Grouping Transitions</h2>
+                                <div style="font-size: 12px; color:grey;">
+                                    <i class="fa-solid fa-film"></i> 12min
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content_vdo ">
+                            <div style="padding-top: 5px; padding-left: 10px;">
+                                <h2 class="title_content">7. Module Introduction</h2>
+                                <div style="font-size: 12px; color:grey;">
+                                    <i class="fa-solid fa-film"></i> 12min
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content_vdo ">
+                            <div style="padding-top: 5px; padding-left: 10px;">
+                                <h2 class="title_content">8. Adding Service Workers</h2>
+                                <div style="font-size: 12px; color:grey;">
+                                    <i class="fa-solid fa-film"></i> 12min
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content_vdo ">
+                            <div style="padding-top: 5px; padding-left: 10px;">
+                                <h2 class="title_content">9. Caching Assets for Offline Use</h2>
+                                <div style="font-size: 12px; color:grey;">
+                                    <i class="fa-solid fa-film"></i> 12min
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content_vdo ">
+                            <div style="padding-top: 5px; padding-left: 10px;">
+                                <h2 class="title_content">10. Further Links & Resources</h2>
+                                <div style="font-size: 12px; color:grey;">
+                                    <i class="fa-solid fa-film"></i> 12min
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content_vdo ">
+                            <div style="padding-top: 5px; padding-left: 10px;">
+                                <h2 class="title_content">11. Testing Dependencies: Components and Services</h2>
+                                <div style="font-size: 12px; color:grey;">
+                                    <i class="fa-solid fa-film"></i> 12min
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content_vdo ">
+                            <div style="padding-top: 5px; padding-left: 10px;">
+                                <h2 class="title_content">12. Analyzing the Testing Setup</h2>
+                                <div style="font-size: 12px; color:grey;">
+                                    <i class="fa-solid fa-film"></i> 12min
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content_vdo ">
+                            <div style="padding-top: 5px; padding-left: 10px;">
+                                <h2 class="title_content">13. About this Section</h2>
+                                <div style="font-size: 12px; color:grey;">
+                                    <i class="fa-solid fa-film"></i> 12min
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-4">
-
-        </div>
     </div>
 
 

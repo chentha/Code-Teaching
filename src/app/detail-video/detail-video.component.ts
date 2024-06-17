@@ -18,6 +18,12 @@ export class DetailVideoComponent {
   comments: Comment[] = [];
   newCommentText = '';
 
+  isOpen = false; 
+
+  toggleMenu() {
+    this.isOpen = !this.isOpen; 
+  }
+
   constructor(private commentService: CommentService, private authService: AuthService) { }
 
   ngOnInit(): void {

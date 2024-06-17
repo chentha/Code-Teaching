@@ -12,8 +12,15 @@ interface User {
   providedIn: 'root'
 })
 export class AuthService {
+  updateUserImage(image: any) {
+    throw new Error('Method not implemented.');
+  }
+  updateUsername(username: string) {
+    throw new Error('Method not implemented.');
+  }
   private storageKey = 'users';
   private currentUserKey = 'currentUser';
+  currentUserChanged: any;
 
   constructor() { }
 
@@ -42,9 +49,14 @@ export class AuthService {
     localStorage.removeItem(this.currentUserKey);
   }
 
+  // getCurrentUser(): User | null {
+  //   const userJson = localStorage.getItem(this.currentUserKey);
+  //   return userJson ? JSON.parse(userJson) : null;
+  // }
+
   getCurrentUser(): User | null {
-    const userJson = localStorage.getItem(this.currentUserKey);
-    return userJson ? JSON.parse(userJson) : null;
+    const user = localStorage.getItem('currentUser');
+    return user ? JSON.parse(user) : null;
   }
 
   private getUsers(): User[] {

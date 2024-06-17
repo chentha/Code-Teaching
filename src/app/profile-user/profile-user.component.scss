@@ -36,22 +36,6 @@
   
 }
 
-.box_user_profile{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid rgb(220, 220, 220);
-    margin-right: 20px;
-    cursor: pointer;
-}
-
-
-// .navbar_main{
-//     width: 100%;
-//     position: fixed;
-//     z-index: 100;
-// }
-
 
 /* Base styles for both buttons */
 button {
@@ -70,7 +54,6 @@ button {
     height: auto;
     border-radius: 30px;
   }
-
   
   /* Button with text "Log In" */
   .login-button {
@@ -157,14 +140,9 @@ header {
     background-color: var(--bs-green-hover);
 }
 
-.navbar_secound{
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
 /****w3schools-logo******/
 .w3schools-logo {
-    width: 120px;
+    width: 150px;
     padding: 0px 8px;
     margin-right: 5px;
 }
@@ -195,7 +173,6 @@ header {
 }
 
 .header-left .menu-btn:hover {
-    height:60px;
     background-color: var(--bs-green);
     color: white;
 }
@@ -1764,4 +1741,290 @@ a {
 
 .input_text{
     height: 40px;
+}
+
+.title_vdo{
+    line-height: 50px;
+}
+.fa-angle-right{
+    font-size: 18px;
+}
+
+
+.vdo_show{
+    padding: 10px;
+    width: 100%;
+    height: 300px;
+}
+.vdo_show .img_of_vdo{
+    padding: 10px;
+    width: 100%;
+    height: 300px;
+    background-color: #e7e7e78e;
+    border-radius: 5px;
+}
+ 
+.box_vdo_image .image_vdo{
+    width: 100%;
+    filter: brightness(90%);
+}
+
+.vdo_show {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.img_of_vdo {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.box_vdo_image {
+    position: relative;
+}
+
+.image_vdo {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: 0.2s;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    color: white;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.caption {
+    font-size: 16px;
+    margin: 10px;
+}
+
+.name_superviser {
+    color: #555;
+    margin: 0 10px 10px;
+    font-size: 14px;
+}
+
+.rating {
+    margin: 0 10px 10px;
+    font-size: 12px;
+}
+
+.star {
+    color: #f39c12;
+}
+
+.img_of_vdo:hover .play-icon{
+    opacity: 0.8;
+    transition: 0.2s;
+}
+.img_of_vdo:hover .image_vdo{
+    filter: brightness(75%);
+    transition: 0.2s;
+}
+.img_of_vdo:hover .caption{
+    color: #a66a08;
+    transition: 0.2s;
+}
+
+
+.box_show_cate{
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+}
+.box_show_cate .image_cate{
+    width: 100%;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.box_sub_show_cate{
+    height: 320px;
+}
+.box_sub_show_cate:hover .image_cate{
+    transform: scale(1.04);
+    transition: 0.3s;
+}
+.box_sub_show_cate:hover .title_cate{
+    color: #a66a08;
+    transition: 0.3s;
+}
+
+
+
+
+.title_vdo{
+    font-size: 20px;
+    line-height: 30px;
+}
+.des_vdo{
+    font-size: 15px;
+    color: grey;
+    font-weight: 400;
+}
+
+.img_cmm{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid red;
+}
+.input_cmm{
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+.box_pf{
+    padding-right: 10px;
+}
+
+
+
+.text_show_cmm{
+    font-size: 13px;
+    
+}
+.pf_user_cmm{
+    float: left;
+    height: 20px;
+}
+.show_text_user_cmm{
+    margin-left: 53px;
+}
+
+.box_delete_cmm{
+    float: right;
+}
+.fa-ellipsis-vertical{
+    font-size: 15px;
+    color: #000;
+    cursor: pointer;
+}
+
+
+.pf_text_cmm{
+    width: 90%;
+
+}
+
+menu {
+    display: none; /* Initially hide the menu */
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  menu.active {
+    display: block; /* Show the menu when active */
+  }
+  
+.content_vdo{
+    width: 100%;
+    height: 45px;
+    cursor: pointer;
+}
+.content_vdo:hover{
+    width: 100%;
+    height: 45px;
+    background-color: rgba(195, 195, 195, 0.373);
+}
+.title_content{
+    font-size: 15px;
+}
+.c_content{
+    font-size: 18px;
+}
+  
+
+.ul .li{
+    font-size: 18px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-bottom: 15px;
+    font-weight:560;
+    cursor: pointer;
+}
+
+
+.box_upload_img{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.file-input-container {
+    position: relative;
+    width: 140px; /* Adjust the size as needed */
+    height: 140px; /* Adjust the size as needed */
+  }
+  
+  .file-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  .file-input-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(224, 224, 224);
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .file-input-label img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .file-input-label:hover {
+    background-color: rgba(224, 224, 224, 0.405);
+  }
+  
+
+.ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .li {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .li i {
+    margin-right: 10px;
+  }
+  
+  .li:hover {
+    background-color: #f0f0f0;
+  }
+  
+.icon_show{
+    font-size: 15px;
+    padding: 10px;
 }
